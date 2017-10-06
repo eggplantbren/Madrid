@@ -1,0 +1,9 @@
+# Ignore all pdflatex crud
+
+slides/ms.aux
+slides/ms.log
+slides/ms.nav
+slides/ms.out
+slides/ms.pdf
+slides/ms.snm
+slides/ms.toc
