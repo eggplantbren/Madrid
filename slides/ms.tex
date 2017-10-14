@@ -26,8 +26,57 @@ The University of Auckland}
 \begin{frame}
 \frametitle{Probability}
 
+Probability is a mathematical framework that has two main applications:
+\vspace{0.5em}
+\begin{enumerate}
+  \item[(1)] Describing proportions of sets.
+  \item[(2)] Describing the plausibility of statements.
+\end{enumerate}
+\vspace{1em}
+(1) is associated with `frequentist' statistics, and (2) is `Bayesian'.
+Both are valid. The kind of `frequentism' I disagree with is the denial
+of (2), not the acceptance of (1).
 
 \end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{The two rules of probability --- general versions}
+For any propositions/statements $X$, $Y$, and $Z$, we have
+the {\bf sum rule}:
+
+\begin{align}
+P(X \vee Y | Z) = P(X | Z) + P(Y | Z) - P(X, Y | Z)
+\end{align}
+
+and the {\bf product rule}:
+
+\begin{align}
+P(X, Y | Z) = P(X | Z)P(Y | X, Z).
+\end{align}
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Easier versions}
+The easy sum rule:
+
+\begin{align}
+P(X \vee Y) = P(X) + P(Y)
+\end{align}
+when $X$ and $Y$ are mutually exclusive (they cannot both be true, i.e.,
+they are two {\em alternative} hypotheses).
+
+The easy product rule:
+\begin{align}
+P(X, Y) = P(X)P(Y | X).
+\end{align}
+
+\end{frame}
+
 
 \end{document}
 
