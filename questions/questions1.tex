@@ -39,23 +39,41 @@ what extra assumptions have been made (e.g. are some of the
 propositions independent, or perhaps mutually exclusive?)
 \end{enumerate}
 
-\section*{Question 1}
-Here are four equations relating some probabilities to other probabilities.
-\begin{align}
-P(A \vee B) &= P(A) + P(B) \\
-P(X, Y \given Z) &= P(X \given Z)P(Y \given X, Z) \\
-P(a=3, b=4 \given c=5) &= \frac{P(a=3, b=4)P(c = 5 \given a=3, b=4)}
-                          {P(c=5)} \\
-P(x=3) &= P(x=3 \given y=4)P(y=4) + P(x=3 \given y=5)P(y=5).
-\end{align}
+\section*{Question 2}
 
-For each of the four equations,
+Steve is on trial for a murder. Based on all the evidence presented in court
+so far, the jury has narrowed down the set of possibilities to the following
+three mutually exclusive hypotheses:\\
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Hypothesis	&	Definition	  &	Prior Probability\\
+\hline
+$S$		& {\bf S}teve did it	         & 0.5 \\
+$M$		& Steve's brother {\bf M}ike did it & 0.3 \\
+$U$     & Someone {\bf U}nrelated to Steve did it & 0.2 \\
+\hline
+\end{tabular}
+\end{center}
+Suppose also that Steve wears size 10 shoes all the time,
+Mike wears size 10 shoes about
+half of the time, and about 10\% of people in general wear men's size 10 shoes.
+
+The murderer's shoeprint is found at the scene, and it is
+of a men's size 10 shoe. Let $D$, for data, be the statement that the
+shoeprint was a men's size 10.
+
 \begin{enumerate}
-\item Which rule(s) of probability theory the equation is based upon?;
-\item Is the equation completely general? If not,
-what extra assumptions have been made (e.g. are some of the
-propositions independent, or perhaps mutually exclusive?)
+\item Find the three likelihoods
+$P(D|S)$, $P(D|M)$, an $P(D|U)$\footnote{You'll have to casually equate
+a probability to a frequency. That's often okay, but they aren't the
+same concept --- they are two separate concepts whose values are being
+equated by assumption.}
+\item Find the three posterior probabilities $P(S|D)$, $P(S|M)$,
+and $P(S|U)$.
 \end{enumerate}
+
 
 
 \end{document}
