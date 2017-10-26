@@ -89,21 +89,49 @@ From the product rule and commutativity of logical {\em and}:
 P(H|D) &= \frac{P(H)P(D|H)}{P(D)}
 \end{align}
 
-or, for a set of hypotheses $\{H_i\}$,
-
-\begin{align}
-P(H_i|D) &= \frac{P(H_i)P(D|H_i)}{\sum_i P(H_i)P(D|H_i)}.
-\end{align}
-
-
 \end{frame}
 
 
 % New slide
 \begin{frame}
+\frametitle{Special properties}
+Sometimes probability assignments make pairs of statements
+{\em independent}. In this special case, the product rule reduces to:
+\begin{align}
+P(X,Y) &= P(X)P(Y)
+\end{align}
+
+Sometimes probability assignments make pairs of statements
+{\em mutually exclusive}. In this special case, the sum rule reduces to:
+\begin{align}
+P(X \vee Y) &= P(X) + P(Y).
+\end{align}
+
+\end{frame}
+
+% New slide
+\begin{frame}
+\frametitle{Bayes' rule --- most useful form}
+For a set of {\em mutually exclusive and exhaustive} (i.e., they're
+{\em alternatives}) hypotheses $\{H_i\}$,
+
+\begin{align}
+P(H_i|D) &= \frac{P(H_i)P(D|H_i)}{\sum_i P(H_i)P(D|H_i)}.
+\end{align}
+
+\begin{itemize}
+\item $P(H_i)$ are the prior probabilities
+\item $P(D|H_i)$ are the likelihoods
+\item The denominator, $P(D)$ is the `marginal likelihood' or `evidence'.
+\end{itemize}
+
+\end{frame}
+
+% New slide
+\begin{frame}
 \frametitle{Basic Bayesian exercises}
 
-Do exercise set 1 (to be written).
+Do exercise set 1.
 
 \end{frame}
 
