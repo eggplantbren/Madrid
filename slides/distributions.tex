@@ -1,0 +1,81 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{multimedia}
+
+\usetheme{Warsaw}
+\usecolortheme{crane}
+
+% www.sharelatex.com/learn/Beamer
+
+\title{Probability Distributions}
+\author{Brendon J. Brewer}
+\institute{Department of Statistics\\
+The University of Auckland}
+\date{{\tt \color{blue} https://www.stat.auckland.ac.nz/\~{ }brewer/}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+% New slide
+\begin{frame}
+\frametitle{Probability Distributions}
+Suppose a quantity $X$ might be 1, 2, 3, 4, or 5, and we assign probabilities of
+$\frac{1}{5}$ to each of those possible values. There is some terminology:
+
+\begin{itemize}
+  \item $X$ is called a `random variable'\footnote{not often by me.}
+  \item $\{1, 2, 3, 4, 5\}$ is called the `sample space', `hypothesis space',
+        or `parameter space'
+  \item $\boldsymbol{p} = \left\{\frac{1}{5}, \frac{1}{5}, \frac{1}{5},
+                \frac{1}{5}, \frac{1}{5}\right\}$
+        is the `probability distribution' for
+        $x$. In this case, it is a {\em discrete uniform} distribution.
+\end{itemize}
+
+The probability distribution is often written as $P(X=x) = $(some function of $x$).
+
+\end{frame}
+
+
+
+% New slide
+\begin{frame}
+\frametitle{Properties of discrete probability distributions}
+
+Normalisation:\\ $\sum_x P(X=x) = 1$.\vspace{0.5em}
+
+Expected value:\\$\mathds{E}(X) = \left<X\right> = \sum_x x P(X=x)$\vspace{0.5em}
+
+Variance:\\$\textnormal{Var}(X) = \mathds{E}\left((X - \mathds{E}(X))^2\right) = \sum_x (x - \mathds{E}(X))^2 P(X=x)$\vspace{0.5em}
+
+Standard deviation:\\$\textnormal{sd}(X) = \sqrt{\textnormal{Var}(X)}$
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Shorthand notation}
+$P(X=x)$ is cumbersome. $x$ is also just a dummy variable.
+
+Common shorthand notation: 
+Use $p(x)$ instead, equivocate between the quantity itself and the dummy
+variable. E.g.:
+\begin{align}
+\mathds{E}(x) = \sum x p(x)
+\end{align}
+
+\end{frame}
+
+
+
+
+\end{document}
+
+
