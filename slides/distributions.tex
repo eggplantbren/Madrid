@@ -4,6 +4,7 @@
 \usepackage{subfig}
 \usepackage{amsmath}
 \usepackage{dsfont}
+\usepackage{minted}
 \usepackage{multimedia}
 
 \usetheme{Warsaw}
@@ -73,6 +74,26 @@ variable. E.g.:
 
 \end{frame}
 
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Numerical handling}
+Numerical handling of discrete probability distributions for a single
+quantity: \vspace{2em}
+
+\begin{minted}{python}
+xs = np.arange(5, 20) # Grid of possibilities
+ps = xs**2            # Not normalised
+ps /= ps.sum()        # Normalise it
+
+# Expected value and variance
+ex = np.sum(xs*ps) 
+variance = np.sum(ps*(xs - ex)**2)
+np.sum(ps[xs >= 10]) # P(x >= 10)
+\end{minted}
+
+
+\end{frame}
 
 
 
