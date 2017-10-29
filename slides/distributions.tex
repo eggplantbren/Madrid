@@ -30,16 +30,17 @@ Suppose a quantity $X$ might be 1, 2, 3, 4, or 5, and we assign probabilities of
 $\frac{1}{5}$ to each of those possible values. There is some terminology:
 
 \begin{itemize}
-  \item $X$ is called a `random variable'\footnote{not often by me.}
-  \item $\{1, 2, 3, 4, 5\}$ is called the `sample space', `hypothesis space',
+  \item<2-> $X$ is called a `random variable' (not often by me)
+  \item<3-> $\{1, 2, 3, 4, 5\}$ is called the `sample space', `hypothesis space',
         or `parameter space'
-  \item $\boldsymbol{p} = \left\{\frac{1}{5}, \frac{1}{5}, \frac{1}{5},
+  \item<4-> $\boldsymbol{p} = \left\{\frac{1}{5}, \frac{1}{5}, \frac{1}{5},
                 \frac{1}{5}, \frac{1}{5}\right\}$
         is the `probability distribution' for
         $x$. In this case, it is a {\em discrete uniform} distribution.
 \end{itemize}
 
-The probability distribution is often written as $P(X=x) = $(some function of $x$).
+\visible<5>{
+The probability distribution is often written as $P(X=x) =$ (some function of $x$).}
 
 \end{frame}
 
@@ -49,13 +50,21 @@ The probability distribution is often written as $P(X=x) = $(some function of $x
 \begin{frame}
 \frametitle{Properties of discrete probability distributions}
 
+\pause
 Normalisation:\\ $\sum_x P(X=x) = 1$.\vspace{0.5em}
 
+\pause
 Expected value:\\$\mathds{E}(X) = \left<X\right> = \sum_x x P(X=x)$\vspace{0.5em}
 
+\pause
 Variance:\\$\textnormal{Var}(X) = \mathds{E}\left((X - \mathds{E}(X))^2\right) = \sum_x (x - \mathds{E}(X))^2 P(X=x)$\vspace{0.5em}
 
+\pause
 Standard deviation:\\$\textnormal{sd}(X) = \sqrt{\textnormal{Var}(X)}$
+
+\pause
+The expected value and sd describe the {\em center} and {\em width}
+of the distribution respectively.
 
 \end{frame}
 
@@ -82,9 +91,10 @@ Numerical handling of discrete probability distributions for a single
 quantity: \vspace{2em}
 
 \begin{minted}{python}
-xs = np.arange(5, 20) # Grid of possibilities
+xs = np.arange(5, 21) # Grid of possibilities
 ps = xs**2            # Not normalised
-ps /= ps.sum()        # Normalise it
+ps = ps/ps.sum()      # Normalise it
+plt.bar(xs, ps)       # Plot it
 
 # Expected value and variance
 ex = np.sum(xs*ps) 
