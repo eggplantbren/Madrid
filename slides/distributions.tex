@@ -115,7 +115,7 @@ np.sum(ps[xs >= 10]) # P(x >= 10)
 Here are some common discrete distributions:
 
 \begin{itemize}
-\item <2-> Discrete Uniform
+\item <2-> Discrete Uniform (which one is it?)
 \item <3-> Binomial (how many successes out of $N$ quasi-identical trials?)
 \item <4-> Poisson (how many occurrences of rare event?)
 \end{itemize}
@@ -172,6 +172,51 @@ where $\lambda \geq 0$ and $x \in \{0, 1, 2, 3, ..., \}$.
 \end{frame}
 
 
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Continuous distributions}
+
+These are characterised by a continuous hypothesis space (e.g.
+``all real numbers'') and a {\em probability density function} (PDF).
+\vspace{1em}
+
+For example, normal/gaussian distributions:
+
+\begin{align}
+X | \mu, \sigma &\sim \textnormal{Normal}(\mu, \sigma^2) \\
+f_X(x) &= \frac{1}{\sigma \sqrt{2\pi}} \exp\left[-\frac{1}{2\sigma^2(x-\mu)^2}\right]
+\end{align}
+
+
+$f_X(x)$ is the full notation favoured by many statisticians.
+You can also just write $f(x)$ or $p(x)$ (and not having any upper-case $X$).
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Properties of continuous probability distributions}
+
+Just like discrete, with integrals (implicitly over all $x$) replacing sums!
+
+\pause
+Normalisation:\\ $\int p(x) \, dx = 1$.\vspace{0.5em}
+
+\pause
+Expected value:\\$\mathds{E}(X) = \left<X\right> = \int x p(x) \, dx$\vspace{0.5em}
+
+\pause
+Variance:\\$\textnormal{Var}(X) = \mathds{E}\left((X - \mathds{E}(X))^2\right) = \int (x - \mathds{E}(X))^2 f(x) \, dx$\vspace{0.5em}
+
+\pause
+Standard deviation:\\$\textnormal{sd}(X) = \sqrt{\textnormal{Var}(X)}$
+
+\pause
+The expected value and sd describe the {\em center} and {\em width}
+of the distribution respectively.
+
+\end{frame}
 
 
 \end{document}
