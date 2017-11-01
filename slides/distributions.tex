@@ -128,8 +128,8 @@ Here are some common discrete distributions:
 \frametitle{Astronomy uses for Discrete Uniform}
 
 
-\end{frame}
 
+\end{frame}
 
 
 % New slide
@@ -145,6 +145,29 @@ Here are some common discrete distributions:
 \begin{frame}[t, fragile]
 \frametitle{Astronomy uses for Poisson}
 
+
+The intensity of an X-ray source is such that you would expect to detect
+$\lambda$ photons per minute. Let $x$ be the actual number of photons you
+observe in a minute.
+
+\begin{align}
+x | \lambda &\sim \textnormal{Poisson}(\lambda) \\
+p(x | \lambda) &= \frac{\lambda^x e^{-\lambda}}{x!}
+\end{align}
+
+where $\lambda \geq 0$ and $x \in \{0, 1, 2, 3, ..., \}$.
+
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Three Poisson Distributions}
+
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{poisson.pdf}
+\end{center}
 
 \end{frame}
 
