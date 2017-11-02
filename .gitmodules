@@ -1,0 +1,3 @@
+[submodule "nested-sampling"]
+	path = nested-sampling
+	url = git://github.com/eggplantbren/NSwMCMC
