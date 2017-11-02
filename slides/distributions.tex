@@ -224,7 +224,7 @@ of the distribution respectively.
 Numerical handling of continuous probability distributions for a single
 quantity: \vspace{2em}
 
-\begin{minted}{python}
+\begin{minted}[fontsize=\scriptsize]{python}
 xs = np.linspace(-10.0, 10.0, 10001)  # Grid of possibilities
 ps = np.exp(-0.5*((xs - 2.0)/1.5)**2) # Not normalised
 ps = ps/np.trapz(ps, x=xs) # Normalise it (integral, not sum)
@@ -235,7 +235,40 @@ ex = np.trapz(xs*ps, x=xs)
 variance = np.trapz(ps*(xs - ex)**2, x=xs)
 np.trapz(ps*(xs >= 5.0), x=xs) # P(x >= 5)
 \end{minted}
+\end{frame}
 
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Astronomy uses for Discrete Uniform}
+
+
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Astronomy uses for Binomial}
+
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Common continuous distributions}
+
+Here are some common continuous distributions:
+
+\begin{itemize}
+\item <2-> Uniform (`lots of uncertainty')
+\item <3-> Normal/gaussian (commonly used for noise)
+\item <4-> $t$ (like a normal but with fatter tails)
+\item <5-> Gamma
+\item <6-> Exponential (how long between subsequent events?)
+\item <7-> Pareto (`power law')
+\end{itemize}
 
 \end{frame}
 
