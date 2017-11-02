@@ -33,8 +33,8 @@ P(x=3) &= P(x=3 \given y=4)P(y=4) + P(x=3 \given y=5)P(y=5).
 
 For each of the four equations,
 \begin{enumerate}
-\item Which rule(s) of probability theory the equation is based upon?;
-\item Is the equation completely general? If not,
+\item[(a)] Which rule(s) of probability theory the equation is based upon?;
+\item[(b)] Is the equation completely general? If not,
 what extra assumptions have been made (e.g. are some of the
 propositions independent, or perhaps mutually exclusive?)
 \end{enumerate}
@@ -65,15 +65,75 @@ of a men's size 10 shoe. Let $D$, for data, be the statement that the
 shoeprint was a men's size 10.
 
 \begin{enumerate}
-\item Find the three likelihoods
+\item [(a)] Find the three likelihoods
 $P(D|S)$, $P(D|M)$, an $P(D|U)$\footnote{You'll have to casually equate
 a probability to a frequency. That's often okay, but they aren't the
 same concept --- they are two separate concepts whose values are being
 equated by assumption.}
-\item Find the three posterior probabilities $P(S|D)$, $P(S|M)$,
+\item [(b)] Find the three posterior probabilities $P(S|D)$, $P(S|M)$,
 and $P(S|U)$.
 \end{enumerate}
 
+
+\section*{Question 3}
+In her book `Complete Vocal Technique', Cathrine Sadolin divided
+the singing voice into four `modes' which she called neutral, curbing, overdrive,
+and edge. These all have a different sound to them. Also, each mode
+only works on a certain set of vowel sounds.
+Specifically:
+\begin{itemize}
+\item Any vowel can be used in neutral.
+\item In curbing, only `OO' (as in too), `O' (as in book), and `UH' (as in hungry) can be used.
+\item In overdrive, only `EH' (as in egg) and `OH' (as in so) can be used.
+\item In edge, only `A' (as in cat), `I' (as in sit), `EH' (as in egg), and `OE' (as in herb) can be used.
+\end{itemize}
+
+You observe the data $D_1$: a singer sang `EH',
+and you want to know what the mode was.
+Use the following hypotheses and prior probabilities:
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Hypothesis & Prior probability \\
+\hline
+$N$ (Neutral)   & 0.5 \\
+$C$ (Curbing)   & 0.1 \\
+$O$ (Overdrive) & 0.2 \\
+$E$ (Edge)      & 0.2 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{enumerate}
+\item[(a)] Calculate the posterior
+           probabilities of $N$, $C$, $O$, and $E$ given the data $D_1$.
+           You may assume a likelihood of 0.1 for $N$, and that all legal
+           vowels are equally likely for the other modes.
+\item[(b)] Write down the marginal likelihood formula in terms of the
+           specific statements used in this question.
+\end{enumerate}
+
+The modes are also different in terms of the volume
+(how loud they are):
+\begin{itemize}
+\item Neutral can be quiet, medium, or loud.
+\item Curbing can only be medium.
+\item Edge can only be loud.
+\item Overdrive can only be loud.
+\end{itemize}
+Suppose the observed note was loud (call this statement $D_2$).
+
+\begin{enumerate}
+\item[(e)] Calculate the four posterior probabilities given
+           $D_1$ and $D_2$. You may assume that for each mode,
+           all allowed volumes are equally likely. Do the calculation
+           sequentially, by taking the old posterior probabilities and
+           using them as prior probabilities.
+\item[(f)] Re-do (e) but do it by starting from the original prior and
+           by updating using $D_1$ and $D_2$ simultaneously.
+\end{enumerate}
 
 
 \end{document}
