@@ -5,6 +5,7 @@
 \usepackage[left=2cm, right=2cm, bottom=3cm, top=2cm]{geometry}
 \usepackage{natbib}
 \usepackage{microtype}
+\usepackage{hyperref}
 
 \newcommand{\given}{\,|\,}
 
@@ -37,6 +38,17 @@ p(x) &= \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2}x^2\right).
            number as a `two-sigma confidence level'.
 \item[(d)] Numerically calculate the mean and standard deviation and make sure
            you get something close to 0 and 1 respectively.
+\end{enumerate}
+
+A $t$ distribution has a PDF proportional to
+\begin{align}
+p(x | \nu) &\propto \left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}
+\end{align}
+The parameter $\nu$ controls the shape of the distribution
+(see the \href{https://en.wikipedia.org/wiki/Student\%27s_t-distribution}{Wikipedia page})
+
+\begin{enumerate}
+\item[(e)] Let $\nu=3$. Numerically calculate $P(x \in [-2, 2])$.
 \end{enumerate}
 
 
