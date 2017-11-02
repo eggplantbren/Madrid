@@ -187,7 +187,6 @@ X | \mu, \sigma &\sim \textnormal{Normal}(\mu, \sigma^2) \\
 f_X(x) &= \frac{1}{\sigma \sqrt{2\pi}} \exp\left[-\frac{1}{2\sigma^2(x-\mu)^2}\right]
 \end{align}
 
-
 $f_X(x)$ is the full notation favoured by many statisticians.
 You can also just write $f(x)$ or $p(x)$ (and not having any upper-case $X$).
 
@@ -217,6 +216,30 @@ The expected value and sd describe the {\em center} and {\em width}
 of the distribution respectively.
 
 \end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Numerical handling}
+Numerical handling of continuous probability distributions for a single
+quantity: \vspace{2em}
+
+\begin{minted}{python}
+xs = np.linspace(-10.0, 10.0, 10001)  # Grid of possibilities
+ps = np.exp(-0.5*((xs - 2.0)/1.5)**2) # Not normalised
+ps = ps/np.trapz(ps, x=xs) # Normalise it (integral, not sum)
+plt.plot(xs, ps)           # Plot it
+
+# Expected value and variance - integrals, not sums
+ex = np.trapz(xs*ps, x=xs) 
+variance = np.trapz(ps*(xs - ex)**2, x=xs)
+np.trapz(ps*(xs >= 5.0), x=xs) # P(x >= 5)
+\end{minted}
+
+
+\end{frame}
+
+
 
 
 \end{document}
