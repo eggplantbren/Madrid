@@ -170,7 +170,10 @@ This is called a log-uniform prior. It `puts the error bars in the exponent'.
 \begin{frame}[t, fragile]
 \frametitle{Numerical solution with a grid}
 
-\begin{minted}{python}
+\begin{minted}[fontsize=\footnotesize]{python}
+# The data
+x = np.array([21, 14, 22])
+
 # Grid of possible parameter values
 lamb = np.linspace(0.01, 100.0, 10001)
 
@@ -179,7 +182,14 @@ prior = 1.0 / lamb
 prior = prior / np.trapz(prior, x=lamb)
 
 # Likelihood
-lik = 
+lik = lamb**(np.sum(x)) * np.exp(-3*lamb)\
+          / np.prod(scipy.misc.factorial(x))
+
+# Calculate and plot posterior
+h = prior*lik
+Z = np.trapz(h, x=lamb)
+post = h/Z
+plt.plot(lamb, post)
 \end{minted}
 
 \end{frame}
