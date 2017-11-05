@@ -1,0 +1,117 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{multimedia}
+
+\usetheme{Warsaw}
+\usecolortheme{crane}
+
+% www.sharelatex.com/learn/Beamer
+
+\title{Parameter Estimation}
+\author{Brendon J. Brewer}
+\institute{Department of Statistics\\
+The University of Auckland}
+\date{{\tt \color{blue} https://www.stat.auckland.ac.nz/\~{ }brewer/}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% New slide
+\begin{frame}
+\frametitle{Parameter estimation}
+
+Bayesian inference is mostly used for {\em parameter estimation}.
+Let $\theta$ be an unknown quantity or `parameter', and $D$ be some data.
+
+\pause
+
+A version of Bayes' rule applies to probability distributions:
+\begin{align}
+p(\theta | D) &= \frac{p(\theta)p(D|\theta)}{p(D)}
+\end{align}
+
+Each term is a distribution, not a single probability.
+
+\end{frame}
+
+% New slide
+\begin{frame}
+\frametitle{Why?}
+Consider three statements {\em about the value of $\theta$}: for example,
+$\theta=3.5, \theta=3.6, \theta=3.7$. Consider one statement
+{\em about the value of $D$}: for example, $D=5.9$.
+
+
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Why?}
+
+\begin{align}
+P(\theta=3.5 | D=5.9) &= \frac{P(\theta=3.5)P(D=5.9 | \theta=3.5)}{P(D=5.9)}\vspace{0.5em} \\
+P(\theta=3.6 | D=5.9) &= \frac{P(\theta=3.6)P(D=5.9 | \theta=3.6)}{P(D=5.9)} \\
+P(\theta=3.7 | D=5.9) &= \frac{P(\theta=3.7)P(D=5.9 | \theta=3.7)}{P(D=5.9)}
+\end{align}
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Why?}
+
+\begin{align}
+{\color{green}P(\theta=3.5 | D=5.9)} &= \frac{{\color{red}P(\theta=3.5)}{\color{blue}P(D=5.9 | \theta=3.5)}}{P(D=5.9)}\vspace{0.5em} \\
+{\color{green}P(\theta=3.6 | D=5.9)} &= \frac{{\color{red}P(\theta=3.6)}{\color{blue}P(D=5.9 | \theta=3.6)}}{P(D=5.9)} \\
+{\color{green}P(\theta=3.7 | D=5.9)} &= \frac{{\color{red}P(\theta=3.7)}{\color{blue}P(D=5.9 | \theta=3.7)}}{P(D=5.9)}
+\end{align}
+
+Green = posterior distribution\\
+Red = prior distribution\\
+Blue = likelihood function\\
+Black = Marginal likelihood / evidence
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Why?}
+
+
+\begin{align}
+{\color{green}p(\theta | D)} &= \frac{{\color{red}p(\theta)}{\color{blue}p(D|\theta)}}{p(D)}
+\end{align}
+
+Green = posterior distribution\\
+Red = prior distribution\\
+Blue = likelihood function\\
+Black = Marginal likelihood / evidence
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{Inputs and outputs}
+
+Inference:\\ (choice of prior, choice of likelihood, the data) $\to$ (posterior, marginal likelihood)
+
+\end{frame}
+
+
+
+
+
+
+\end{document}
+
+
