@@ -4,6 +4,7 @@
 \usepackage{subfig}
 \usepackage{amsmath}
 \usepackage{dsfont}
+\usepackage{minted}
 \usepackage{multimedia}
 
 \usetheme{Warsaw}
@@ -141,6 +142,45 @@ For Bayes' rule:
 p(\lambda | x_1, x_2, x_3) &= \frac{p(\lambda)p(x_1, x_2, x_3|\lambda)}{p(x_1, x_2, x_3)}
 \end{align}
 
+we need a prior, $p(\lambda)$.
+
+\end{frame}
+
+
+% New slide
+\begin{frame}
+\frametitle{The log-uniform prior}
+How long is a piece of string?
+
+\pause
+Twice the distance from the middle to one end.
+
+$\implies$
+
+\begin{align}
+p(\lambda) \propto \frac{1}{\lambda}
+\end{align}
+
+This is called a log-uniform prior. It `puts the error bars in the exponent'.
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Numerical solution with a grid}
+
+\begin{minted}{python}
+# Grid of possible parameter values
+lamb = np.linspace(0.01, 100.0, 10001)
+
+# Prior density
+prior = 1.0 / lamb
+prior = prior / np.trapz(prior, x=lamb)
+
+# Likelihood
+lik = 
+\end{minted}
 
 \end{frame}
 
