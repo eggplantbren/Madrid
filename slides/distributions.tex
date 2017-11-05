@@ -136,7 +136,15 @@ Here are some common discrete distributions:
 \begin{frame}[t, fragile]
 \frametitle{Astronomy uses for Binomial}
 
+Suppose it is known (or hypothesised) that 30\% of stars of a particular type
+exhibit a certain kind of oscillation signal. In a new sample of $N=100$
+such stars, let $x$ be the number that have the oscillation.\vspace{1em}
 
+Then $x \sim \textnormal{Binomial}(100, 0.3)$.
+
+\vspace{2em}
+{\tiny I set a probability equal to a frequency here. What implicit
+ assumption am I making?}
 \end{frame}
 
 
@@ -240,23 +248,6 @@ np.trapz(ps*(xs >= 5.0), x=xs) # P(x >= 5)
 
 % New slide
 \begin{frame}[t, fragile]
-\frametitle{Astronomy uses for Discrete Uniform}
-
-
-
-\end{frame}
-
-
-% New slide
-\begin{frame}[t, fragile]
-\frametitle{Astronomy uses for Binomial}
-
-
-\end{frame}
-
-
-% New slide
-\begin{frame}[t, fragile]
 \frametitle{Common continuous distributions}
 
 Here are some common continuous distributions:
@@ -265,13 +256,133 @@ Here are some common continuous distributions:
 \item <2-> Uniform (`lots of uncertainty')
 \item <3-> Normal/gaussian (commonly used for noise)
 \item <4-> $t$ (like a normal but with fatter tails)
-\item <5-> Gamma
+\item <5-> Gamma (nice two-parameter family for a positive quantity)
 \item <6-> Exponential (how long between subsequent events?)
 \item <7-> Pareto (`power law')
 \end{itemize}
 
 \end{frame}
 
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Astronomy uses for Uniform}
+
+There is an asteroid somewhere in an image. Where?
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Astronomy uses for Uniform}
+
+There is an asteroid somewhere in an image. Where?
+
+\end{frame}
+
+
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Higher dimensions}
+
+Joint probability distributions can be created using the product rule.
+e.g.,
+
+\begin{align}
+p(x, y) &= p(x) p(y | x)
+\end{align}
+
+The joint distribution allows you to calculate the probability of statements
+about the {\em pair} $(x, y)$.
+
+\begin{align}
+P\big((x, y) \in R\big) &= \int_R p(x, y) \, dx \, dy
+\end{align}
+
+
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Marginalisation}
+
+If you have a joint distribution but only care about statements about one of
+the quantities, you can find the {\em marginal distribution}:\vspace{2em}
+
+\begin{align}
+p(x) &= \int_{-\infty}^{\infty} p(x, y) \, dy
+\end{align}
+
+
+
+\end{frame}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Bayesian and frequentist uses}
+
+Probability distributions are used in both Bayesian and frequentist senses.
+
+\end{frame}
+
+
+
+% -------------- New slide -------------
+\begin{frame}
+\frametitle{A frequency distribution...}
+
+\centering
+\includegraphics[scale=0.3]{height1.pdf}
+
+\begin{eqnarray*}
+\textnormal{Frac}\left(x \geq 1.8 | x \in [1.5, 2.0]\right)
+&=& 
+\frac{\textnormal{Frac}\left(x \geq 1.8, x \in [1.5, 2.0]\right)}
+{\textnormal{Frac}\left(x \in [1.5, 2.0]\right)}\\
+&=& \frac{\int_{1.8}^{2.0} f(x) \, dx}{\int_{1.5}^{2.0} f(x) \, dx}
+\end{eqnarray*}
+
+\end{frame}
+
+
+% -------------- New slide -------------
+\begin{frame}
+\frametitle{A probability distribution...}
+
+\centering
+\includegraphics[scale=0.3]{height2.pdf}
+
+\begin{eqnarray*}
+\textnormal{Plaus}\left(x \geq 1.8 | x \in [1.5, 2.0]\right)
+&=& 
+\frac{\textnormal{Plaus}\left(x \geq 1.8, x \in [1.5, 2.0]\right)}
+{\textnormal{Plaus}\left(x \in [1.5, 2.0]\right)}\\
+&=& \frac{\int_{1.8}^{2.0} f(x) \, dx}{\int_{1.5}^{2.0} f(x) \, dx}
+\end{eqnarray*}
+
+\end{frame}
+
+
+% -------------- New slide -------------
+\begin{frame}
+\frametitle{The biggest source of confusion in statistics}
+
+\begin{alertblock}{Important!}
+The biggest source of confusion in statistics is the failure to
+distinguish between {\bf frequency distributions} which describe
+{\em populations}, and {\bf probability distributions} which describe
+{\em uncertainty about a single quantity\footnote{Could be a single
+non-scalar quantity, such as $(3.2, 1.7)$.}}.
+\end{alertblock}
+
+\end{frame}
 
 
 
