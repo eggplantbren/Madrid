@@ -10,4 +10,7 @@ pdfs: *.tex
 	pdflatex -shell-escape probability
 	pdflatex -shell-escape distributions
 	pdflatex -shell-escape distributions
+	pdflatex -shell-escape parameter-estimation
+	pdflatex -shell-escape parameter-estimation
+
 

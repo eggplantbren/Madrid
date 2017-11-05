@@ -108,6 +108,44 @@ Inference:\\ (choice of prior, choice of likelihood, the data) $\to$ (posterior,
 \end{frame}
 
 
+% New slide
+\begin{frame}
+\frametitle{Example}
+
+If we knew the intensity of an X-ray source was $\lambda$, we would expect
+to see $\lambda t$ photons arrive in a time interval of length $t$.
+Let $x_1, x_2, x_3$ be the number of photons observed in three consecutive
+minutes.
+
+\begin{align}
+x_i | \lambda &\sim \textnormal{Poisson}(\lambda)
+\end{align}
+
+i.e.,
+
+\begin{align}
+p(x_1, x_2, x_3 | \lambda) &= \prod_{i=1}^3 \frac{\lambda^{x_i} e^{-\lambda x_i}}{x_i!}
+\end{align}
+
+Suppose we observed $(x_1, x_2, x_3) = (21, 14, 22)$, and want to infer
+$\lambda$.
+
+\end{frame}
+
+% New slide
+\begin{frame}
+\frametitle{Example}
+
+For Bayes' rule:
+\begin{align}
+p(\lambda | x_1, x_2, x_3) &= \frac{p(\lambda)p(x_1, x_2, x_3|\lambda)}{p(x_1, x_2, x_3)}
+\end{align}
+
+
+\end{frame}
+
+
+
 
 
 
