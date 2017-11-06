@@ -42,4 +42,16 @@ slides/ms.out
 slides/ms.pdf
 slides/ms.snm
 slides/ms.toc
+_minted-metropolis/
+metropolis.aux
+metropolis.log
+metropolis.nav
+metropolis.out
+metropolis.pdf
+metropolis.snm
+metropolis.toc
+metropolis.vrb
+transit-data.pdf
+transit-data.txt
+
 
