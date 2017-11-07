@@ -1,3 +1,4 @@
+*.vrb
 texput.log
 questions/ms.tex
 questions/questions1.aux
