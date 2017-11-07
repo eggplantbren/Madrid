@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{dsfont}
 \usepackage{multimedia}
+\usepackage{minted}
 
 \usetheme{Warsaw}
 \usecolortheme{crane}
@@ -21,6 +22,23 @@ The University of Auckland}
 \begin{document}
 
 \frame{\titlepage}
+
+
+% New slide
+\begin{frame}[t, fragile]
+\frametitle{Where to get everything}
+
+To get all of the material (slides, code, exercises):\vspace{1em}
+
+\begin{center}
+\begin{verbatim}
+git clone --recursive
+      https://github.com/eggplantbren/Madrid
+\end{verbatim}
+\end{center}
+
+\end{frame}
+
 
 
 % New slide
