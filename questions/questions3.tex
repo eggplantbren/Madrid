@@ -1,0 +1,61 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[left=2cm, right=2cm, bottom=3cm, top=2cm]{geometry}
+\usepackage{natbib}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\newcommand{\given}{\,|\,}
+
+\title{Question Set 3 --- Parameter Estimation}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%\abstract{\noindent Abstract}
+
+% Need this after the abstract
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+\section*{Question 1}
+You are a customs agent. Among other things, you are supposed to prevent
+drugs being smuggled in packages sent into the country. A colleague finds a
+package containing two toys. Let the number of toys containing drugs be
+$\eta$. Clearly the value of $\eta$ is either 0, 1, or 2. You drill into
+one of the toys and find that it does not have drugs.
+Calculate the posterior distribution for $\eta$ given that the tested
+toy did not contain drugs. Assume a (discrete) uniform prior, i.e.
+$P(\eta=0) = P(\eta=1) = P(\eta=2) = 1/3$.
+
+\section*{Question 2}
+An X-ray source emits photons at a steady rate, but since it's so distant, we
+only pick up a few photons per second.
+A standard probabilistic model for the arrival times of the photons is the
+``Poisson process''. A specific prediction of this model is that, if the
+expected number of photons in a time interval
+is $\lambda$, the (discrete) probability distribution for the actual number of photons $x$ in that interval is a Poisson distribution:
+\begin{eqnarray}
+p(x | \lambda) &=& \frac{\lambda^x e^{-\lambda}}{x!}
+\end{eqnarray}
+Find and plot the posterior distribution for $\lambda$ given $x=5$. Use an improper
+log-uniform prior proportional to $\lambda^{-1}$.
+
+\section*{Question 3}
+Use the posterior distribution obtained in the previous question to calculate
+the predictive distribution for $x'$, the number of photons observed in a
+different one second interval, given $x=5$. Plot the predictive distribution
+and compare it with what you'd get by naively assuming the best fit
+(maximum likelihood) value $\lambda=5$ to make the prediction.\\
+
+{\bf Hint 1: }Write down the probability distribution for $x'$ given
+$\lambda$ and $x$, and then marginalise out $\lambda$.\\
+
+{\bf Hint 2: }You may need to do some numerical integration.
+
+\end{document}
+
