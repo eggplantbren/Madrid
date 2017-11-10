@@ -29,6 +29,6 @@ The _nested-sampling_ submodule contains Nested Sampling and Metropolis code
 in Python. If you have Anaconda, these should run without problems.
 You can run one or the other of these by doing this:
 
-    > cd nested-sampling/pythong
+    > cd nested-sampling/python
     > python plain_metropolis.py
     > python nested_sampling.py
