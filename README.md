@@ -16,7 +16,7 @@ Where everything is
 The _slides_ directory contains LaTeX source code for the lecture slides.
 It's easy to compile them:
 
-> > cd slides
-> > make
+    > cd slides
+    > make
 
 
