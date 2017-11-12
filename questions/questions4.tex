@@ -43,7 +43,21 @@ b &\sim \textnormal{Normal}(0, 1000^2) \\
 \ln\sigma &\sim \textnormal{Uniform}(-10, 10)
 \end{align}
 
+Follow these steps to implement this model for the Metropolis algorithm:
+\begin{enumerate}
+\item Copy {\tt transit\_model.py} to a new file called {\tt straightline.py}, and
+work on that.
+\item Modify {\tt num\_params} and {\tt data} appropriately, and delete
+un-needed variables.
+\item Rewrite {\tt from\_prior} and {\tt log\_prior}, and modify
+{\tt jump\_sizes}, so they reflect the above
+prior distributions.
+\item Edit {\tt log\_likelihood} to be appropriate for this problem.
+\end{enumerate}
 
+Run {\tt plain\_metropolis.py} and look at trace plots for the parameters.
+Use the resulting posterior samples to summarise the inferences about
+$m$, $b$, and $\sigma$.
 
 
 \end{document}
