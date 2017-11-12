@@ -1,0 +1,50 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[left=2cm, right=2cm, bottom=3cm, top=2cm]{geometry}
+\usepackage{natbib}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\newcommand{\given}{\,|\,}
+
+\title{Question Set 4 --- Metropolis and Nested Sampling}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%\abstract{\noindent Abstract}
+
+% Need this after the abstract
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+\section*{Question 1}
+Consider doing basic `linear regression' - fitting of a straight line to data
+$\left\{\{(x_i, y_i)\}_{i=1}^N, N\right\}$.
+Make the following assumptions. First, the probability distribution for the
+data given the parameters:
+\begin{align}
+y_i | m, b, \sigma &\sim \textnormal{Normal}(mx_i + b, \sigma^2)
+\end{align}
+
+This is the assumption of `gaussian noise' around the straight line. Astronomers
+often assume $\sigma$ is known and different for each data point, perhaps given
+as a third column in the data file (the `error bars'). In this question I'm
+assuming a constant $\sigma$ applies to all data points and it is unknown.
+
+Assume the following naive wide priors for the three unknown parameters:
+\begin{align}
+m &\sim \textnormal{Normal}(0, 1000^2) \\
+b &\sim \textnormal{Normal}(0, 1000^2) \\
+\ln\sigma &\sim \textnormal{Uniform}(-10, 10)
+\end{align}
+
+
+
+
+\end{document}
+
