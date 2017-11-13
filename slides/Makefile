@@ -15,6 +15,11 @@ pdfs: *.tex
 	pdflatex -shell-escape parameter-estimation
 	pdflatex -shell-escape metropolis
 	pdflatex -shell-escape metropolis
+	pdflatex -shell-escape nested-sampling
+	pdflatex -shell-escape nested-sampling
+	pdflatex -shell-escape hierarchical-models
+	pdflatex -shell-escape hierarchical-models
+
 
 
 

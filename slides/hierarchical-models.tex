@@ -1,0 +1,62 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+\usecolortheme{crane}
+
+
+\title{Hierarchical Models}
+\author{Brendon J. Brewer}
+\institute{Department of Statistics\\
+The University of Auckland}
+\date{{\tt \color{blue} https://www.stat.auckland.ac.nz/\~{ }brewer/}}
+
+
+\linespread{1.3}
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage{dsfont}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+
+% DO NOT COMPILE THIS FILE DIRECTLY!
+% This is included by the other .tex files.
+
+\begin{frame}[t,plain]
+\titlepage
+\end{frame}
+
+
+\begin{frame}[t,plain]
+\frametitle{Hierarchical models}
+\vspace{2em}
+Hierarchical models are useful ways of specifying priors in complex situations
+with lots of unknown parameters.
+
+\end{frame}
+
+
+
+\begin{frame}[t,plain]
+\frametitle{An example}
+Suppose you want to measure some properties of the (frequency) distribution of
+masses of some stars, but your mass measurements contain noise.
+
+Let $\{m_1, m_2, ..., m_N\}$ be the true masses. If you could, you'd fit
+parameters. For instance,
+
+\begin{align}
+m_i | m_{\rm min},\alpha &\sim \textnormal{Pareto}(m_{\rm min}, \alpha)
+\end{align}
+
+\end{frame}
+
+
+
+
+
+
+
+\end{document}
+
