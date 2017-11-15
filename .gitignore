@@ -16,8 +16,7 @@ questions4.aux
 questions4.log
 questions4.out
 questions4.pdf
-slides/_minted-distributions/
-slides/_minted-parameter-estimation/
+slides/_minted*
 slides/distributions.aux
 slides/distributions.log
 slides/distributions.nav
