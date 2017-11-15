@@ -52,16 +52,57 @@ m_{\rm min} &\sim \textnormal{Something} \\
 \alpha      &\sim \textnormal{Something}
 \end{align}
 
+But if we don't have the $m$s...
 
 \end{frame}
+
+
+
+
+
 
 \begin{frame}[t,plain]
 \frametitle{An example}
 
+Let $x_i$ be a noisy measurement of mass $m_i$:
+\begin{align}
+x_i | m_i &\sim \textnormal{Normal}(m_i, \sigma_i^2)
+\end{align}
+
+Then we have $p(\boldsymbol{x} | \boldsymbol{m})$ and
+$p(\boldsymbol{m} | m_{\rm min}, \alpha)$.
+
 \end{frame}
 
 
 
+\begin{frame}[t,plain]
+\frametitle{Bayes}
+Posterior distribution for unknowns given knowns:\vspace{1.5em}
+
+\begin{align}
+p(m_{\rm min}, \alpha, \boldsymbol{m} | \boldsymbol{x})
+  &\propto
+    p(m_{\rm min}, \alpha, \boldsymbol{m})
+    p(\boldsymbol{x} | m_{\rm min}, \alpha, \boldsymbol{m})\\
+  &\propto
+    p(m_{\rm min}, \alpha)p(\boldsymbol{m} | m_{\rm min}, \alpha)
+    p(\boldsymbol{x} | \boldsymbol{m}) 
+\end{align}
+
+The data we wish we had (the $x$s) are now unknown parameters.
+Their prior is defined {\em conditional on other parameters} called
+`hyperparameters'.
+
+
+\end{frame}
+
+
+\begin{frame}[t,plain]
+\frametitle{Probabilistic Graphical Model}
+PGM (also known as DAG for Directed Acyclic Graph)
+
+\end{frame}
 
 
 
