@@ -109,6 +109,23 @@ PGM (also known as DAG for Directed Acyclic Graph)\vspace{1em}
 \end{frame}
 
 
+\begin{frame}[t,plain]
+\frametitle{Different parameterisation}
+
+The prior $p(m_{\rm min}, \alpha, \boldsymbol{m})$ is highly correlated.\vspace{1em}
+
+It's usually better to make the prior more independent. In this case, we can
+define $u_i \sim \textnormal{Uniform}(0,1)$, and obtain $m_i$ from
+
+\begin{align}
+m_i := m_{\rm min}\left(1 - u_i\right)^{-1/\alpha}.
+\end{align}
+
+That's the `inverse transform method'.
+
+\end{frame}
+
+
 
 \end{document}
 
