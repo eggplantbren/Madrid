@@ -14,16 +14,8 @@ Where everything is
 ===================
 
 The _slides_ directory contains LaTeX source code for the lecture slides.
-It's easy to compile them to produce PDFs:
-
-    > cd slides
-    > make
-
 The _questions_ directory contains LaTeX source code for exercise questions.
-It's easy to compile them to produce PDFs:
-
-    > cd questions
-    > make
+I've now committed the PDFs as well so you don't need to compile anything.
 
 The _nested-sampling_ submodule contains Nested Sampling and Metropolis code
 in Python. If you have Anaconda, these should run without problems.
