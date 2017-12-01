@@ -1,0 +1,92 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[left=2cm, right=2cm, bottom=3cm, top=2cm]{geometry}
+\usepackage{natbib}
+\usepackage{microtype}
+\usepackage{minted}
+\usepackage{url}
+
+\newcommand{\given}{\,|\,}
+
+\title{Question Set 4 --- Metropolis and Nested Sampling\\Solutions}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%\abstract{\noindent Abstract}
+
+% Need this after the abstract
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+\section*{Question 1}
+My version of {\tt straightline.py} is now given in the {\tt NSwMCMC} repository
+at \url{https://github.com/eggplantbren/NSwMCMC}, so get the latest version of that.
+The dataset is the distance from which people could read a road sign, as a function
+of age. Age is associated with worse eyesight, as you'd expect.
+
+In the code, I parameterised the noise standard deviation using $\ln \sigma$
+instead of $\sigma$, as $\ln \sigma$ has a uniform prior, and this is a little
+neater than parameterising it as $\sigma$ and using $p(\sigma) \propto \sigma^{-1}$.
+
+To run {\tt plain\_metropolis.py} on this problem, edit the import statement
+which by default imports things from {\tt transit\_model}, so that it imports
+the functions from {\tt straight\_line}. Then execute {\tt plain\_metropolis.py}.
+When {\tt plain\_metropolis} is imported, it will plot the data, and you'll have
+to close that plot before the rest of the code will run.
+
+To compute posterior summaries, such as the posterior means and standard deviations,
+just load {\tt posterior\_samples.txt}. After excluding burn-in, I got
+\begin{align}
+m &= -3.00 \pm 0.42\textnormal{ feet per year} \\
+b &= 576 \pm 24\textnormal{ feet} \\
+\sigma &= 51.0 \pm 7.0\textnormal{ feet}.
+\end{align}
+I had to re-exponentiate the third column of output to get $\sigma$ from
+$\ln \sigma$.
+
+\section*{Question 2}
+The version with the $t$-distribution for the sampling distribution is given in
+{\tt straightline2.py}. The posterior distributions for $m$, $b$, and $\sigma$
+aren't affected very much...
+
+\section*{Question 3}
+I ran {\tt nested\_sampling.py} on the {\tt straightline} model, with 100 particles
+(that's the default in the {\tt NSwMCMC} code). You can monitor the progress by
+looking at the image in {\tt progress\_plot.png}.
+The marginal likelihood was
+\begin{align}
+\ln p(D | \texttt{straightline}) &= -176.23 \pm 0.40
+\end{align}
+
+For the modified version of the model, I got
+\begin{align}
+\ln p(D | \texttt{straightline2}) &= -175.85 \pm 0.39
+\end{align}
+
+These are very close, taking into account the numerical uncertainties.
+Therefore, the data does not imply much about whether the $t$ or the
+normal distribution model is better.
+That's because there weren't any discrepant points, and both the $t$
+and normal distributions are consistent with that. The posterior
+for $\nu$ in the {\tt straightline2} model would show that the data
+only rules out very low values.
+
+Finally, it is usually
+not recommended to use Bayesian model comparison with
+naive broad priors, like I did here. However, I used the same broad priors
+for most of the parameters that the two models had in common, so I wasn't
+going to unintentionally favour one of the models solely due to the priors.
+
+By the way, I blame Python (or at least, my inability to use Python well) for
+the slow speed of these computations. Try implementing NS in C/C++/Fortran or
+using whatever Python tricks I have failed to use, and it should work a lot
+faster!
+
+
+\end{document}
+
