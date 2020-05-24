@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.misc import factorial
+from scipy.special import factorial
 
 # Hypothesis space
 x = np.arange(0, 30)
